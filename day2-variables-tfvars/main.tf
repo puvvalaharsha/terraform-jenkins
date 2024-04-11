@@ -55,7 +55,7 @@ subnet_id = aws_subnet.myvpc1.id
 #ec2 instance
 resource "aws_instance" "myec2" {
     tags ={
-        Name="myec2"
+        Name="myec2-jenkins"
     }
     ami = var.ami_id
     instance_type = var.instance_type
