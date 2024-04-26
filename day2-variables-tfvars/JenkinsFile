@@ -9,7 +9,7 @@ pipeline {
         }
         stage('clone') {
           steps{
-                https://github.com/puvvalaharsha/terraform-jenkins.git
+                git branch: 'main', url: 'https://github.com/puvvalaharsha/terraform-jenkins.git'
           }
         }
         stage('init'){
