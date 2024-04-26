@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('clone') {
+          steps{
+                https://github.com/puvvalaharsha/terraform-jenkins.git
+          }
+        }
+        stage('init'){
+          steps{
+          sh 'terraform init'
+        }
+      }
+      stage('plan'){
+        steps{
+          sh 'terraform plan'
+        }
+      }
+      stage('action'){
+        steps{
+        sh 'terraform $action --auto-approve'
+        }
+    }
+}
